@@ -36,7 +36,6 @@ func _spawn_room():
 	yield(get_tree(),"idle_frame")
 	pj2d.node_b = new_room.get_path()
 	pj2d2.node_b = new_room.get_path()
-	var old_rooms = get_node_or_null("/root/Main/Rooms").get_children()
 
 func _release_room():
 	pj2d.set_deferred("node_b",pj2d.node_a)
