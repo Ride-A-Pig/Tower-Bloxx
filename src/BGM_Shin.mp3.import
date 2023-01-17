@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/BGM_Shin.mp3-c81711d887b21f88d33f245709b90d1f.mp3str"
+
+[deps]
+
+source_file="res://src/BGM_Shin.mp3"
+dest_files=[ "res://.import/BGM_Shin.mp3-c81711d887b21f88d33f245709b90d1f.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

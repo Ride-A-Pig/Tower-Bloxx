@@ -1,0 +1,54 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Node",
+"class": "Global",
+"language": "GDScript",
+"path": "res://Scene/GlobalValue.gd"
+} ]
+_global_script_class_icons={
+"Global": ""
+}
+
+[application]
+
+config/name="City Bloxx"
+run/main_scene="res://Scene/Start.tscn"
+config/icon="res://icon.png"
+
+[autoload]
+
+GlobalValue="*res://Scene/GlobalValue.gd"
+
+[display]
+
+window/size/width=160
+window/size/height=144
+window/size/resizable=false
+window/size/test_width=960
+window/size/test_height=864
+window/stretch/mode="2d"
+window/stretch/aspect="keep"
+
+[gui]
+
+common/drop_mouse_on_gui_input_disabled=true
+
+[physics]
+
+common/physics_fps=240
+2d/default_gravity=980
+
+[rendering]
+
+2d/snapping/use_gpu_pixel_snap=true
+environment/default_clear_color=Color( 0.533333, 0.752941, 0.439216, 1 )
+environment/default_environment="res://default_env.tres"

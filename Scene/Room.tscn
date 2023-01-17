@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://src/Rooms.png" type="Texture" id=1]
+[ext_resource path="res://Scene/Room.gd" type="Script" id=2]
+[ext_resource path="res://src/SFX_water_drop_01.wav" type="AudioStream" id=3]
+
+[sub_resource type="PhysicsMaterial" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 15, 10 )
+
+[node name="Room" type="RigidBody2D" groups=["Room"]]
+collision_layer = 3
+mass = 10.2041
+physics_material_override = SubResource( 2 )
+contacts_reported = 1
+contact_monitor = true
+linear_damp = 1.0
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0, 10 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+hframes = 8
+frame = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( 0, 10 )
+shape = SubResource( 1 )
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+visible = false
+position = Vector2( 0, 10 )
+scale = Vector2( 1.6, 1.1 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )

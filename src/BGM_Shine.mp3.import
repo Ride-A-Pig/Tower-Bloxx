@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/BGM_Shine.mp3-8e658a26a102e8ce1aa73ccfd85b775c.mp3str"
+
+[deps]
+
+source_file="res://src/BGM_Shine.mp3"
+dest_files=[ "res://.import/BGM_Shine.mp3-8e658a26a102e8ce1aa73ccfd85b775c.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
