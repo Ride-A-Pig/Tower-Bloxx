@@ -9,7 +9,6 @@ onready var rooms = $"/root/Main/Rooms"
 onready var animation_player = $AnimationPlayer
 
 
-
 var room_resource = preload("res://Scene/Room.tscn")
 var count = 0
 var new_room
@@ -44,7 +43,7 @@ func _release_room():
 	pj2d2.set_deferred("node_b",pj2d2.node_a)
 	new_room.linear_velocity = Vector2(0,0)
 	animation_player.playback_speed=1+0.02*GlobalValue.score
-	animation_player.playback_speed = clamp(animation_player.playback_speed,0,3)
+	animation_player.playback_speed = clamp(animation_player.playback_speed,0,4)
 
 func _on_timeout():
 	_spawn_room()

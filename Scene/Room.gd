@@ -24,6 +24,8 @@ func _on_body_entered(body):
 func _on_disappear():
 	if linear_velocity.length()>100:
 		_game_over()
+	else:
+		mode = RigidBody2D.MODE_STATIC
 		
 		
 func _game_over():
