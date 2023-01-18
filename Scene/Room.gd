@@ -4,11 +4,12 @@ var cam_up = 0
 
 onready var asp = $AudioStreamPlayer
 onready var judge = get_node_or_null("/root/Main/CanvasLayer/Judge")
+onready var area_2d = $Area2D
 
 
 func _ready():
 	connect("body_entered",self,"_on_body_entered")
-	$VisibilityNotifier2D.connect("screen_exited",self,"_on_disappear")
+	area_2d.connect("area_exited",self,"_on_disappear")
 	
 func _on_body_entered(body):
 #	GlobalValue._add_score()
@@ -34,12 +35,16 @@ func _on_body_entered(body):
 	asp.play()
 
 
-func _on_disappear():
+func _on_disappear(area):
 	if linear_velocity.length()>100:
 		_game_over()
 	else:
-		mode = RigidBody2D.MODE_STATIC
+		set_deferred("mode",RigidBody2D.MODE_STATIC)
+		var tween = create_tween()
+		tween.tween_property(self,"global_rotation_degrees",0.0,0.2)
 		
 		
 func _game_over():
 	get_tree().change_scene("res://Scene/Over.tscn")
+
+
