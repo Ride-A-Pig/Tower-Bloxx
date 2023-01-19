@@ -16,6 +16,7 @@ func _on_body_entered(body):
 #	if GlobalValue.score>=4:
 #		get_node_or_null("/root/Main/Camera2D").position.y-=20
 	GlobalValue._add_score()
+	set_deferred("linear_velocity",Vector2.ZERO)
 	cam_up = global_position.y-body.global_position.y
 	var offset = abs(global_position.x-body.global_position.x)
 	var tween = create_tween()

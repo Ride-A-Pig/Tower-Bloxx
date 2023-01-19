@@ -5,6 +5,8 @@
 [ext_resource path="res://src/SFX_water_drop_01.wav" type="AudioStream" id=3]
 
 [sub_resource type="PhysicsMaterial" id=2]
+rough = true
+absorbent = true
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 15, 10 )

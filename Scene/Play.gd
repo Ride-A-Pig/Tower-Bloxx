@@ -41,8 +41,8 @@ func _release_room():
 	pj2d.set_deferred("node_b",pj2d.node_a)
 	pj2d2.set_deferred("node_b",pj2d2.node_a)
 	new_room.linear_velocity = Vector2(0,0)
-	animation_player.playback_speed=1+0.02*GlobalValue.score
-	animation_player.playback_speed = clamp(animation_player.playback_speed,0,4)
+	if animation_player.playback_speed < 5:
+		animation_player.playback_speed=1+0.02*GlobalValue.score
 
 func _on_timeout():
 	_spawn_room()
