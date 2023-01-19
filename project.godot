@@ -8,16 +8,6 @@
 
 config_version=4
 
-_global_script_classes=[ {
-"base": "Node",
-"class": "Global",
-"language": "GDScript",
-"path": "res://Scene/GlobalValue.gd"
-} ]
-_global_script_class_icons={
-"Global": ""
-}
-
 [application]
 
 config/name="City Bloxx"
@@ -35,6 +25,7 @@ window/size/height=144
 window/size/resizable=false
 window/size/test_width=960
 window/size/test_height=864
+mouse_cursor/custom_image="res://src/Mouse.png"
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
 

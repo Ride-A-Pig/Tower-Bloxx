@@ -98,6 +98,7 @@ margin_bottom = 8.0
 grow_horizontal = 0
 theme = SubResource( 13 )
 custom_colors/font_color = Color( 0.878431, 0.972549, 0.815686, 1 )
+custom_colors/font_color_shadow = Color( 0.203922, 0.407843, 0.337255, 1 )
 text = "0"
 
 [node name="Judge" type="Label" parent="CanvasLayer"]
@@ -109,7 +110,9 @@ margin_right = 54.0
 margin_bottom = 7.0
 rect_pivot_offset = Vector2( 0, 7 )
 custom_colors/font_color = Color( 0.878431, 0.972549, 0.815686, 1 )
+custom_colors/font_color_shadow = Color( 0.203922, 0.407843, 0.337255, 1 )
 custom_fonts/font = SubResource( 14 )
+text = "Start"
 valign = 1
 
 [node name="Background" type="Control" parent="."]
@@ -475,6 +478,7 @@ anims/RESET = SubResource( 11 )
 [node name="Timer" type="Timer" parent="Camera2D"]
 wait_time = 0.5
 one_shot = true
+autostart = true
 
 [node name="Area2D" type="Area2D" parent="Camera2D"]
 collision_layer = 2

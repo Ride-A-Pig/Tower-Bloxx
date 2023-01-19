@@ -1,24 +1,25 @@
 extends RigidBody2D
 
-var cam_up = 0
-
 onready var asp = $AudioStreamPlayer
 onready var judge = get_node_or_null("/root/Main/CanvasLayer/Judge")
 onready var area_2d = $Area2D
-
+onready var sprite = $Sprite
 
 func _ready():
 	connect("body_entered",self,"_on_body_entered")
 	area_2d.connect("area_exited",self,"_on_disappear")
+	sprite.frame = randi()%8
+	_fade_in()
+
+func _fade_in():
+	sprite.modulate = Color(1,1,1,0)
+	var tween = create_tween()
+	tween.tween_property(sprite, "modulate", Color(1,1,1,1), .1)
 	
 func _on_body_entered(body):
-#	GlobalValue._add_score()
-#	if GlobalValue.score>=4:
-#		get_node_or_null("/root/Main/Camera2D").position.y-=20
 	GlobalValue._add_score()
 	linear_velocity = Vector2.ZERO
 	angular_velocity = 0
-	cam_up = global_position.y-body.global_position.y
 	var offset = abs(global_position.x-body.global_position.x)
 	var tween = create_tween()
 	tween.tween_property(judge,"rect_scale",Vector2(1.4,1.4),.05)
@@ -36,17 +37,14 @@ func _on_body_entered(body):
 	set_deferred("contact_monitor",false)
 	asp.play()
 
-
-func _on_disappear(area):
+func _on_disappear(_area):
 	if linear_velocity.length()>100:
 		_game_over()
 	else:
 		set_deferred("mode",RigidBody2D.MODE_STATIC)
 		var tween = create_tween()
-		tween.tween_property(self,"global_rotation_degrees",0.0,0.2)
-		print("Out")
-		
-		
+		tween.tween_property(self,"global_rotation_degrees", .0, .2)
+
 func _game_over():
 	get_tree().change_scene("res://Scene/Over.tscn")
 
