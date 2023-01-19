@@ -468,6 +468,7 @@ node_a = NodePath("../..")
 bias = 0.5
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Camera2D"]
+autoplay = "Mag"
 anims/Mag = SubResource( 10 )
 anims/RESET = SubResource( 11 )
 

@@ -16,7 +16,8 @@ func _on_body_entered(body):
 #	if GlobalValue.score>=4:
 #		get_node_or_null("/root/Main/Camera2D").position.y-=20
 	GlobalValue._add_score()
-	set_deferred("linear_velocity",Vector2.ZERO)
+	linear_velocity = Vector2.ZERO
+	angular_velocity = 0
 	cam_up = global_position.y-body.global_position.y
 	var offset = abs(global_position.x-body.global_position.x)
 	var tween = create_tween()
@@ -43,6 +44,7 @@ func _on_disappear(area):
 		set_deferred("mode",RigidBody2D.MODE_STATIC)
 		var tween = create_tween()
 		tween.tween_property(self,"global_rotation_degrees",0.0,0.2)
+		print("Out")
 		
 		
 func _game_over():
