@@ -5,8 +5,10 @@
 [ext_resource path="res://src/SFX_water_drop_01.wav" type="AudioStream" id=3]
 
 [sub_resource type="PhysicsMaterial" id=2]
+rough = true
+absorbent = true
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 15, 10 )
 
 [sub_resource type="RectangleShape2D" id=3]
@@ -17,7 +19,6 @@ collision_layer = 3
 physics_material_override = SubResource( 2 )
 contacts_reported = 1
 contact_monitor = true
-linear_damp = 1.0
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -28,14 +29,14 @@ hframes = 8
 frame = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2( 0, 10 )
-shape = SubResource( 1 )
+shape = SubResource( 4 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
 
 [node name="Area2D" type="Area2D" parent="."]
+visible = false
 position = Vector2( 0, 10 )
 scale = Vector2( 0.2, 0.128571 )
 collision_layer = 0

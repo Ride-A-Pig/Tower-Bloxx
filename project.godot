@@ -18,6 +18,10 @@ config/icon="res://icon.png"
 
 GlobalValue="*res://Scene/GlobalValue.gd"
 
+[debug]
+
+settings/stdout/print_fps=true
+
 [display]
 
 window/size/width=160
@@ -47,10 +51,9 @@ ui_accept={
 
 [physics]
 
-common/physics_fps=1000
-2d/physics_engine="GodotPhysics"
-2d/thread_model=2
-2d/default_gravity=980
+common/physics_fps=400
+2d/bvh_collision_margin=20.0
+2d/default_gravity=1000
 
 [rendering]
 

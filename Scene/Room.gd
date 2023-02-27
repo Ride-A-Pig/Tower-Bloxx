@@ -41,9 +41,11 @@ func _on_disappear(_area):
 	if linear_velocity.length()>100:
 		_game_over()
 	else:
-		set_deferred("mode",RigidBody2D.MODE_STATIC)
 		var tween = create_tween()
-		tween.tween_property(self,"global_rotation_degrees", .0, .2)
+		tween.tween_property(self,"global_rotation_degrees", .0, .5)
+		yield(tween,"finished")
+		set_deferred("mode",RigidBody2D.MODE_STATIC)
+
 
 func _game_over():
 	get_tree().change_scene("res://Scene/Over.tscn")
